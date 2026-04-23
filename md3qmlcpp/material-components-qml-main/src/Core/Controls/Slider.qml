@@ -8,6 +8,7 @@ Item {
     property real from: 0.0
     property real to: 1.0
     property real value: 0.0
+    property real defaultValue: NaN
     property real stepSize: 0.0
     property bool snapMode: false // If true, snaps to steps
     property bool tickMarksEnabled: false
@@ -29,6 +30,12 @@ Item {
     
     implicitWidth: 200
     implicitHeight: 44 // Touch target height
+
+    Component.onCompleted: {
+        if (defaultValue !== value) {
+            defaultValue = value
+        }
+    }
     
     // Theme
     property var _colors: Theme.color
@@ -385,6 +392,10 @@ Item {
         
         onReleased: {
             control._draggingHandle = 0
+        }
+
+        onDoubleClicked: {
+            control.value = control.defaultValue
         }
         
         onPositionChanged: (mouse) => {
