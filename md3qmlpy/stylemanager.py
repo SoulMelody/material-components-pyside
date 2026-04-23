@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 from PySide6.QtCore import QObject, Property, Signal, Slot, Qt, QUrl
 from PySide6.QtGui import QColor, QGuiApplication, QImage
@@ -77,7 +77,7 @@ def _qcolor_to_argb(color: QColor) -> int:
     return int(color.rgba()) & 0xFFFFFFFF
 
 
-def _url_to_local_path(file_url: QUrl) -> Optional[Path]:
+def _url_to_local_path(file_url: QUrl) -> Path | None:
     if file_url.isEmpty():
         return None
     if file_url.isLocalFile():
@@ -98,7 +98,7 @@ class StyleManager(QObject):
     lightSchemeChanged = Signal()
     darkSchemeChanged = Signal()
 
-    def __init__(self, parent: Optional[QObject] = None) -> None:
+    def __init__(self, parent: QObject | None = None) -> None:
         super().__init__(parent)
         self._is_dark_theme: bool = False
         self._seed_color: QColor = QColor("#6750a4")
@@ -328,7 +328,7 @@ class StyleManager(QObject):
         }
         return out
 
-    def _extract_dominant_color_simple(self, image: QImage) -> Optional[int]:
+    def _extract_dominant_color_simple(self, image: QImage) -> int | None:
         w = image.width()
         h = image.height()
         if w <= 0 or h <= 0:

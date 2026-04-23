@@ -2,16 +2,15 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
-from typing import Optional
 
 from PySide6.QtCore import QUrl
 from PySide6.QtGui import QGuiApplication, QIcon, QSurfaceFormat
 from PySide6.QtQml import QQmlApplicationEngine
 
-from md3qmlpy.stylemanager import StyleManager
+from md3qmlpy.stylemanager import StyleManager  # noqa: F401
 
 
-def run(qml_root: Optional[Path] = None) -> int:
+def run(qml_root: Path | None = None) -> int:
     format_ = QSurfaceFormat()
     format_.setSamples(4)
     QSurfaceFormat.setDefaultFormat(format_)
@@ -20,7 +19,7 @@ def run(qml_root: Optional[Path] = None) -> int:
 
     repo_root = Path(__file__).resolve().parents[1]
     icon_env = os.environ.get("MD3QMLPY_WINDOW_ICON")
-    icon_path: Optional[Path] = None
+    icon_path: Path | None = None
     if icon_env:
         icon_path = Path(icon_env)
         if not icon_path.is_absolute():
@@ -40,8 +39,6 @@ def run(qml_root: Optional[Path] = None) -> int:
 
     engine = QQmlApplicationEngine()
     engine.addImportPath(str(qml_root))
-
-    style_manager = StyleManager()
 
     root_ctx = engine.rootContext()
     root_ctx.setContextProperty(
