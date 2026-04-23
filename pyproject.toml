@@ -7,10 +7,10 @@ authors = [
     { name = "sudoevolve", email = "sudoevolve@gmail.com" },
     { name = "rainzee", email = "rainzee.w@gmail.com" },
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
     "materialyoucolor>=3.0.2",
-    "pyside6>=6.10.2",
+    "pyside6>=6.11.0",
 ]
 
 [build-system]
@@ -19,7 +19,7 @@ build-backend = "uv_build"
 
 [tool.ruff]
 line-length = 120
-target-version = "py313"
+target-version = "py310"
 
 [tool.ruff.lint]
 select = [
@@ -28,5 +28,5 @@ select = [
 
 [dependency-groups]
 dev = [
-    "ruff>=0.15.4",
+    "ruff>=0.15.11",
 ]
