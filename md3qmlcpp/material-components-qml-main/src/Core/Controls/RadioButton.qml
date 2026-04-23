@@ -6,7 +6,6 @@ Item {
     
     property bool checked: false
     property string text: ""
-    property bool enabled: true
     
     signal clicked()
     

@@ -10,7 +10,6 @@ Item {
     property real value: 0.0
     property real stepSize: 0.0
     property bool snapMode: false // If true, snaps to steps
-    property bool enabled: true
     property bool tickMarksEnabled: false
     property bool valueLabelEnabled: false
 

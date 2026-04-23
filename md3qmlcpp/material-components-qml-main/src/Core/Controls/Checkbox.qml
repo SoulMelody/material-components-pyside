@@ -7,7 +7,6 @@ Item {
     property bool checked: false
     property bool indeterminate: false
     property string text: ""
-    property bool enabled: true
     
     // Read-only property to determine visual state
     readonly property bool _visualChecked: checked || indeterminate

@@ -11,7 +11,6 @@ Item {
     property string type: "assist"
     property bool selected: false // For filter chips
     property bool showCloseIcon: type === "input"
-    property bool enabled: true
     
     // Signals
     signal clicked()

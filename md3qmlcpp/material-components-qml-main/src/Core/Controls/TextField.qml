@@ -14,7 +14,6 @@ Item {
     property string errorText: ""
     property bool error: errorText.length > 0
     property string type: "filled" // "filled", "outlined"
-    property bool enabled: true
     property bool readOnly: false
     property color labelBackgroundColor: Theme.color.surface // Background color for label mask in outlined mode
     

@@ -8,7 +8,6 @@ Item {
     property string icon: "" // Icon source or character
     // Types: "elevated", "filled", "filledTonal", "outlined", "text"
     property string type: "filled"
-    property bool enabled: true
 
     // Layout configuration
     property real horizontalPadding: type === "text" ? 12 : 24

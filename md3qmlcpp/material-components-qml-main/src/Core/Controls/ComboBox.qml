@@ -12,7 +12,6 @@ Item {
     property string leadingIcon: ""
     property string trailingIcon: "arrow_drop_down"
     property string type: "filled" // "filled" | "outlined"
-    property bool enabled: true
     
     // Read-only
     property string currentText: {

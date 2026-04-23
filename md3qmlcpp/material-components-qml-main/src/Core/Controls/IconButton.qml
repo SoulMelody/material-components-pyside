@@ -7,7 +7,6 @@ Item {
     property string icon: ""
     // Types: "filled", "filledTonal", "outlined", "standard"
     property string type: "standard"
-    property bool enabled: true
 
     implicitWidth: 40
     implicitHeight: 40

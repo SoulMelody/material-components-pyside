@@ -12,7 +12,6 @@ Item {
         { text: "Month", icon: "grid_view", selected: false },
         { text: "Year", icon: "calendar_today", selected: false }
     ] 
-    property bool enabled: true
     property bool multiSelect: false
     
     signal clicked(int index)
