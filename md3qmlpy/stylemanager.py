@@ -6,6 +6,12 @@ from typing import Any, Optional
 
 from PySide6.QtCore import QObject, Property, Signal, Slot, Qt, QUrl
 from PySide6.QtGui import QColor, QGuiApplication, QImage
+from PySide6.QtQml import QmlElement, QmlSingleton
+
+
+QML_IMPORT_NAME = "md3.StyleManager"
+QML_IMPORT_MAJOR_VERSION = 1
+QML_IMPORT_MINOR_VERSION = 0
 
 
 @dataclass(frozen=True)
@@ -83,6 +89,8 @@ def _url_to_local_path(file_url: QUrl) -> Optional[Path]:
     return None
 
 
+@QmlElement
+@QmlSingleton
 class StyleManager(QObject):
     isDarkThemeChanged = Signal()
     seedColorChanged = Signal()

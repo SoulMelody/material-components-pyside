@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Effects
 import md3.Core
 
 Item {
@@ -1516,7 +1515,7 @@ Item {
                             stepSize: 1
                             snapMode: true
                             valueLabelEnabled: true
-                            Component.onCompleted: value = blurCard.blurAmount
+                            Component.onCompleted: defaultValue = value = blurCard.blurAmount
                             onMoved: blurCard.blurAmount = value
                         }
                     }

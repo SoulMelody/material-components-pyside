@@ -2,6 +2,7 @@
 import QtQuick.Layouts
 import QtQuick.Dialogs
 import md3.Core
+import md3.StyleManager
 Item {
     width: parent.width
     height: parent.height

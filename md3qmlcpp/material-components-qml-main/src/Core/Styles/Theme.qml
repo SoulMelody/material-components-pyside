@@ -12,6 +12,7 @@
 pragma Singleton
 import QtQuick
 import QtQml
+import md3.StyleManager
 
 QtObject {
     id: theme

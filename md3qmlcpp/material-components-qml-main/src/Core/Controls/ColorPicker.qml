@@ -2,6 +2,7 @@
 import QtQuick.Layouts
 import QtQuick.Effects
 import md3.Core
+import md3.StyleManager
 ColumnLayout {
     id: root
     spacing: 16

@@ -1,5 +1,6 @@
 import QtQuick
 import md3.Core
+import md3.StyleManager
 
 Item {
     id: root
